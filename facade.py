@@ -10,8 +10,19 @@ class Computer:
         self.mem=parts.Memory()
         self.hd=parts.HardDisk()
     # implement the class below this line    
-
-
+	def startComputer(self):
+		self.cpu.check()
+		self.mem.load()
+		self.hd.mount()
+	
+	def printCPUInfo(self):
+		self.cpu.getInfo()
+		
+	def printMemInfo(self):
+		self.mem.getInfo()
+		
+	def printHDInfo(self):
+		self.hd.getInfo()
 
 
 
@@ -22,7 +33,7 @@ class Computer:
 # Don't modify the following code!
 def main():
     com=Computer()
-    com.startComputer() # When a computer starts, it needs to check the CPU, load the Memory, and then mount the harddisk.
+    com.startComputer() 
     com.printCPUInfo()
     com.printMemInfo()
     com.printHDInfo()
